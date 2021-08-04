@@ -8,6 +8,7 @@ body {
   background-image: url('../mountains.jpg');
   background-repeat: no-repeat;
   background-size: 2000px 1000px;
+  flex-direction: column;
 }
 
 .hero-body {
@@ -22,5 +23,6 @@ body {
   padding: 30px;
   box-shadow: 0 0 10px 2px;
 }
+
 
 /*comment -- adding more to it */
