@@ -5,3 +5,4 @@
 // >> results to display:
 // >> >> national park name with image, 3 activies, weather
 // link/button to take you back to homepage {{nav bar}}
+// added line for merge stuff
