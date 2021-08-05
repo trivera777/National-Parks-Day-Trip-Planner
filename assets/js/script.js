@@ -8,14 +8,15 @@
 // added line for merge stuff
 
 // create varible that matches with button >> verify botton tags
-var searchBtn = document.querySelector('.btn');
+var searchBtn = $(".search-button");
 // create varible that matches with state >> verify botton tags
 var selectedState = document.querySelector('.state');
+let redirectUrl = "./activities.html"
+let stateCode = "";
 
 //API Keys:
-var npsApiKey = keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc;
-var weatherApiKey = f6dbccad1096ef580392335246d5632e;
-
+var npsApiKey = "keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc";
+var weatherApiKey = "f6dbccad1096ef580392335246d5632e";
 var renderSearchResults = function (event) {
   //will need to come back to this to determine if we need state code or if we can use fill state name
   //limit is currently set to 50. we will want to discuess how many results we want it to return on search
@@ -27,4 +28,12 @@ var renderSearchResults = function (event) {
     npsApiKey;
 };
 
-searchBtn.addEventListener('click', renderSearchResults);
+searchBtn.click(function(event){
+  event.preventDefault();
+  stateCode = $(".state-selection").find("option:selected").data("state")
+  console.log(stateCode);
+  sessionStorage.setItem("stateCode", stateCode)
+  window.location.href = redirectUrl
+
+});
+
