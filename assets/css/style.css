@@ -5,12 +5,17 @@ body {
   width: 100vw;
   height: 100vh;
   align-items: center;
-  background-image: url('../mountains.jpg');
+  background: url('../mountains.jpg');
   background-repeat: no-repeat;
   background-size: 2000px 1000px;
   flex-direction: column;
+  background-attachment: fixed;
 }
 
+h1{
+  font-size: 30px;
+  text-align: center;
+}
 .hero-body {
   background-color: royalblue;
 }
@@ -18,12 +23,25 @@ body {
 .container {
   text-align: center;
   height: 150px;
-  background-color: whitesmoke;
+  background-color:;
   border-radius: 5px;
   padding: 30px;
   box-shadow: 0 0 10px 2px;
 }
 
-footer {
-  height: -50px;
+.column {
+  text-align: center;
+}
+
+.foot{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+p, a {
+  color: azure;
+  font-size: 20px;
 }
