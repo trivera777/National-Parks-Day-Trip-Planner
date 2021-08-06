@@ -11,7 +11,6 @@ var npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
 var weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
 let stateCode = JSON.parse(sessionStorage.getItem('stateCode'));
 
-
 var renderSearchResults = function (stateCode) {
   var npsApiUrl =
     'https://developer.nps.gov/api/v1/parks?stateCode=' +
@@ -21,22 +20,27 @@ var renderSearchResults = function (stateCode) {
 
   console.log(npsApiUrl);
 
-  
   function getApiNps(npsApiUrl) {
     sessionStorage.getItem('stateCode');
     console.log(stateCode);
     console.log('before fetch');
-    fetch(npsApiUrl).then(function (response) {
-      console.log(response);
-
-      if (response.status === 200) {
-        console.log('this worked');
-      }
-      return response.json();
-    });
+    fetch(npsApiUrl)
+      .then(function (response) {
+        if (response.status === 200) {
+          response.json().then(function (data) {
+            console.log(data);
+          });
+        } else {
+          alert('Error: ' + response.statusText);
+        }
+      })
+      .catch(function (error) {
+        alert('Unable to connect to NSP');
+      });
   }
 
   getApiNps(npsApiUrl);
-
 };
 console.log(stateCode);
+
+renderSearchResults(stateCode);
