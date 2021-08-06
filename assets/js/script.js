@@ -1,7 +1,4 @@
-
-
-var searchBtn = $('.search-button');
-
+let searchBtn = $('.search-button');
 
 let redirectUrl = './activities.html';
 let stateCode = '';
@@ -13,6 +10,4 @@ searchBtn.click(function (event) {
   sessionStorage.setItem('stateCode', JSON.stringify(stateCode));
   window.location.href = redirectUrl;
   //call to the render search function
- 
 });
-
