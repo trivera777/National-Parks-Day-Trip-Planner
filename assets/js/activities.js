@@ -7,6 +7,13 @@
 // link/button to take you back to homepage {{nav bar}}
 // added line for merge stuff
 
+//variables
+let stateParkName = $('#state-park-name');
+let picEl = $('#pic');
+let activity1El = $('#activity1');
+let activity2El = $('#activity2');
+let activity3El = $('#activity3');
+
 //API Keys:
 let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
 let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
@@ -24,11 +31,20 @@ let renderSearchResults = function (stateCode) {
     fetch(npsApiUrl)
       .then(function (response) {
         if (response.status === 200) {
-          response.json().then(function (data) {
-            console.log(data);
-            let latitude = data.data[0].latitude;
-            let longitude = data.data[0].longitude;
-            let activities = data.data[0].activities;
+          response.json().then(function (parkData) {
+            console.log(parkData);
+            let latitude = parkData.data[0].latitude;
+            let longitude = parkData.data[0].longitude;
+            let activities = parkData.data[0].activities;
+
+            stateParkName.text(parkData.data[0].fullName);
+            picEl
+              .attr('src', parkData.data[0].images[0].url)
+              .attr('alt', parkData.data[0].images[0].caption);
+            activity1El.text(parkData.data[0].activities[0].name);
+            activity2El.text(parkData.data[0].activities[1].name);
+            activity3El.text(parkData.data[0].activities[2].name);
+
             function getApiWeather() {
               let weatherUrlQuery =
                 'https://api.openweathermap.org/data/2.5/onecall?lat=' +
