@@ -5,97 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>National Day Trip Planner</title>
+    <title>National Park Day Trip Planner</title>
 </head>
  
  
 <body>
     
-<section class="hero is-info">
-  <div class="hero-body">
-    <p class="title">
-      National Day Trip Planner
-    </p>
-    <p class="subtitle">
-      Info subtitle
-    </p>
-  </div>
-</section>
-<br>
- 
-<div class="container">
-    <h1>Select State</h1><br>
-    <div class="select is-rounded">
-        <select>
-          <option>Select State</option>
-          <option>Alabama</option>
-          <option>Alaska</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-          <option>California</option>
-          <option>Colorado</option>
-          <option>Connecticut</option>
-          <option>Delaware</option>
-          <option>Florida</option>
-          <option>Georgia</option>
-          <option>Hawaii</option>
-          <option>Idaho</option>
-          <option>Illinois</option>
-          <option>Indiana</option>
-          <option>Iowa</option>
-          <option>Kansas</option>
-          <option>Kentucky</option>
-          <option>Louisiana</option>
-          <option>Maine</option>
-          <option>Maryland</option>
-          <option>Massachusetts</option>
-          <option>Michigan</option>
-          <option>Minnesota</option>
-          <option>Mississippi</option>
-          <option>Missouri</option>
-          <option>Montana</option>
-          <option>Nebraska</option>
-          <option>Nevada</option>
-          <option>New Hampshire</option>
-          <option>New Jersey</option>
-          <option>New Mexico</option>
-          <option>New York</option>
-          <option>North Carolina</option>
-          <option>North Dakota</option>
-          <option>Ohio</option>
-          <option>Oklahoma</option>
-          <option>Oregon</option>
-          <option>Pennsylvania</option>
-          <option>Rhode Island</option>
-          <option>South Carolina</option>
-          <option>South Dakota</option>
-          <option>Tennessee</option>
-          <option>Texas</option>
-          <option>Utah</option>
-          <option>Vermont</option>
-          <option>Virginia</option>
-          <option>Washington</option>
-          <option>West Virginia</option>
-          <option>Wisconsin</option>
-          <option>Wyoming</option>
- 
-        </select>
-      </div>
-      <button class="button is-text"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-  </div>
-  
+  <section class="hero is-info">
+    <div class="hero-body">
+      <p class="title">
+        National ParkDay Trip Planner
+      </p>
+      <p class="subtitle">
+        Info subtitle
+      </p>
+    </div>
+  </section>
   <br>
+ 
+  <div class="container">
+      <h1>Select State</h1><br>
+      <div class="select is-rounded">
+          <select class="state-selection">
+            <option>Select State</option>
+            <option data-state="AL">Alabama</option>
+            <option data-state="AK">Alaska</option>
+            <option data-state="AZ">Arizona</option>
+            <option data-state="AR">Arkansas</option>
+            <option data-state="CA">California</option>
+            <option data-state="CO">Colorado</option>
+            <option data-state="CT">Connecticut</option>
+            <option data-state="DE">Delaware</option>
+            <option data-state="FL">Florida</option>
+            <option data-state="GA">Georgia</option>
+            <option data-state="HI">Hawaii</option>
+            <option data-state="ID">Idaho</option>
+            <option data-state="IL">Illinois</option>
+            <option data-state="IN">Indiana</option>
+            <option data-state="IA">Iowa</option>
+            <option data-state="KS">Kansas</option>
+            <option data-state="KY">Kentucky</option>
+            <option data-state="LA">Louisiana</option>
+            <option data-state="ME">Maine</option>
+            <option data-state="MD">Maryland</option>
+            <option data-state="MA">Massachusetts</option>
+            <option data-state="MI">Michigan</option>
+            <option data-state="MN">Minnesota</option>
+            <option data-state="MS">Mississippi</option>
+            <option data-state="MO">Missouri</option>
+            <option data-state="MT">Montana</option>
+            <option data-state="NE">Nebraska</option>
+            <option data-state="NV">Nevada</option>
+            <option data-state="NH">New Hampshire</option>
+            <option data-state="NJ">New Jersey</option>
+            <option data-state="NM">New Mexico</option>
+            <option data-state="NY">New York</option>
+            <option data-state="NC">North Carolina</option>
+            <option data-state="ND">North Dakota</option>
+            <option data-state="OH">Ohio</option>
+            <option data-state="OK">Oklahoma</option>
+            <option data-state="OR">Oregon</option>
+            <option data-state="PA">Pennsylvania</option>
+            <option data-state="RI">Rhode Island</option>
+            <option data-state="SC">South Carolina</option>
+            <option data-state="SD">South Dakota</option>
+            <option data-state="TN">Tennessee</option>
+            <option data-state="TX">Texas</option>
+            <option data-state="UT">Utah</option>
+            <option data-state="VT">Vermont</option>
+            <option data-state="VA">Virginia</option>
+            <option data-state="WA">Washington</option>
+            <option data-state="WV">West Virginia</option>
+            <option data-state="WI">Wisconsin</option>
+            <option data-state="WY">Wyoming</option>
+  
+          </select>
+        </div>
+        <button class="button is-text search-button" id="search-button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    </div>
+    
+    <br>
 
 
-<footer class="footer">
-<div class="content has-text-centered">
-<p><strong>National Day Trip Planner</strong> by <a href="https://github.com/SirNathanJF">Nathan Flessner</a>, <a href="https://github.com/michlimones">Micheal Limones</a> and <a href="https://github.com/trivera777">Tifanny Rivera</a>. </p>
-</div>
-</footer>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p><strong>National Day Trip Planner</strong> by <a href="https://github.com/SirNathanJF">Nathan Flessner</a>, <a href="https://github.com/michlimones">Micheal Limones</a> and <a href="https://github.com/trivera777">Tifanny Rivera</a>. </p>
+    </div>
+  </footer>
 
-
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
