@@ -32,6 +32,24 @@ var renderSearchResults = function (stateCode) {
             let latitude = data.data[0].latitude;
             let longitude = data.data[0].longitude;
             let activities = data.data[0].activities;
+            function getApiWeather(latitude, longitude){
+
+                let weatherUrlQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&units=imperial" + "&APPID=" + weatherApiKey;
+            
+                fetch(weatherUrlQuery).then(function (response){
+                    if (response.status === 404) {
+                        console.log('404 Error');
+                        return;
+                    } else {
+                        response.json().then(function (weatherData){
+                            // displayWeatherData(weatherData); need to add function to display weather data to webpage
+                            console.log(weatherData);
+                        });
+                        0
+                    };
+                });
+            };
+            getApiWeather();
           });
         } else {
           alert('Error: ' + response.statusText);
