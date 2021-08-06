@@ -29,6 +29,9 @@ var renderSearchResults = function (stateCode) {
         if (response.status === 200) {
           response.json().then(function (data) {
             console.log(data);
+            let latitude = data.data[0].latitude;
+            let longitude = data.data[0].longitude;
+            let activities = data.data[0].activities;
           });
         } else {
           alert('Error: ' + response.statusText);
