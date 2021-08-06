@@ -38,13 +38,16 @@ var renderSearchResults = function (stateCode) {
     //I commented out the redirect in the click function to see this info
     fetch(npsApiUrl).then(function (response) {
       console.log(response);
+
       if (response.status === 200) {
         console.log('this worked');
       }
       return response.json();
     });
   }
+
   getApi(npsApiUrl);
+
 };
 
 searchBtn.click(function (event) {
@@ -56,3 +59,4 @@ searchBtn.click(function (event) {
   //call to the render search function
   renderSearchResults(stateCode);
 });
+

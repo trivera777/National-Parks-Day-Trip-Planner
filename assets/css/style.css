@@ -24,5 +24,6 @@ body {
   box-shadow: 0 0 10px 2px;
 }
 
-
-/*comment -- adding more to it */
+footer {
+  height: -50px;
+}
