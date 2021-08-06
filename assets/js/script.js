@@ -26,7 +26,7 @@ var renderSearchResults = function (stateCode) {
   var npsApiUrl =
     'https://developer.nps.gov/api/v1/parks?stateCode=' +
     stateCode +
-    '&limit=50&api_key=' +
+    '&limit=1&api_key=' +
     npsApiKey;
 
   console.log(npsApiUrl);
@@ -38,14 +38,13 @@ var renderSearchResults = function (stateCode) {
     //I commented out the redirect in the click function to see this info
     fetch(npsApiUrl).then(function (response) {
       console.log(response);
-      console.log('inside the fetch');
       if (response.status === 200) {
-        console.log('here');
+        console.log('this worked');
       }
       return response.json();
     });
   }
-  getApi();
+  getApi(npsApiUrl);
 };
 
 searchBtn.click(function (event) {
