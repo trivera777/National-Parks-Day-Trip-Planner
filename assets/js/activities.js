@@ -124,6 +124,14 @@ let renderSearchResults = function (stateCode) {
               });
             }
             getApiWeather();
+            let map;
+            initMap = function () {
+              map = new google.maps.Map(document.getElementById("map"), {
+              center: { lat: parseFloat(latitude), lng: parseFloat(longitude) },
+              zoom: 8,
+            });
+            }
+            initMap();
           });
         } else {
           alert('Error: ' + response.statusText);
