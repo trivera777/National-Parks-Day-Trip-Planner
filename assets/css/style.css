@@ -23,7 +23,6 @@ h1{
 .container {
   text-align: center;
   height: 150px;
-  background-color:;
   border-radius: 5px;
   padding: 30px;
   box-shadow: 0 0 10px 2px;
@@ -31,6 +30,7 @@ h1{
 
 .column {
   text-align: center;
+margin-left: 20px;
 }
 
 .foot{
