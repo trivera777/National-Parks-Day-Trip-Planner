@@ -10,6 +10,7 @@
 //variables
 let stateParkName = $('#state-park-name');
 let picEl = $('#pic');
+let activitiesEl = $('#activities')
 let activity1El = $('#activity1');
 let activity2El = $('#activity2');
 let activity3El = $('#activity3');
@@ -88,6 +89,11 @@ let renderSearchResults = function (stateCode) {
                 activities.splice(randomNumber, 1);
                 console.log(randomActivity.name);
                 // create divs to display on page
+                let addActivity = $('<div>')
+                addActivity.attr('class', 'column')
+                addActivity.text(randomActivity.name)
+                addActivity.appendTo(activitiesEl)
+
               }
             }
 

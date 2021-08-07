@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link rel="font" href="https://fonts.google.com/specimen/Allura?preview.text=National%20Parks%20Day%20Trip%20Planner&preview.text_type=custom#standard-styles">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>National Parks Day Trip Planner</title>
 </head>
@@ -24,7 +26,7 @@
 
 <div class="columns">
     <div class="column is-narrow">
-        <div class="box" style="width: 350px; height: 350px;">
+        <div class="box" style="width: 350px; height: 425px;">
             <p class="title is-5" id='state-park-name'>State</p>
             <p class="subtitle">
                 <img id="pic" src="" alt="">
@@ -36,35 +38,21 @@
         <div class="box" style="width: 1450px; height: 100px;">
            <p class="title is-5">Activities</p>
 
-    <div class="columns">
-
-        <div class="column" id="activity1">
-            <strong>Activity 1</strong>
-
-        </div>
-
-        <div class="column" id="activity2">
-            <strong>Activity 2</strong>
-        </div>
-
-        <div class="column" id="activity3">
-            <strong>Activity 3</strong>
-        </div>
+    <div class="columns" id="activities">
     </div>
     </div>
 
 
     <div id="weather" style="width: 1450px;">
-        <div class="box" style="height: 225px;">
+        <div class="box" style="height: 300px;">
          <h1>Weather</h1> 
            <div id="five-day-html"></div>
-           <div class="five-day-cards"></div>
         </div>
     </div>
 </div>
 
 <div class="foot">
-    <p><i>National Parks Day Trip Planner</i> by <a href="https://github.com/SirNathanJF">Nathan Flessner</a>, <a href="https://github.com/michlimones">Micheal Limones</a> and <a href="https://github.com/trivera777">Tifanny Rivera</a>. </p>
+    <p><span class="footer-title">National Parks Day Trip Planner</span> by <a href="https://github.com/SirNathanJF">Nathan Flessner</a>, <a href="https://github.com/michlimones">Micheal Limones</a> and <a href="https://github.com/trivera777">Tifanny Rivera</a>. </p>
   </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
