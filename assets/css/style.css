@@ -88,3 +88,6 @@ p, a {
   justify-content: center;
   width: 100%;
 }
+#map {
+  height: 200px;
+}
