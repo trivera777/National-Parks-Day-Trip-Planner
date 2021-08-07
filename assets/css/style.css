@@ -11,27 +11,6 @@ body {
   flex-direction: column;
   background-attachment: fixed;
 }
-.title {
-  font-family: 'Carrois Gothic SC', sans-serif;
-  font-size: 35px;
-  color:grey;
-}
-.state-title {
-  font-family: 'Carrois Gothic SC', sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: grey;
-}
-
-.nav-subtitle, a {
- margin-bottom: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.subtitle {
-  font-size: 17px;
-  font-family: tahoma;
-  color: black;
-}
 
 .hero-body {
   text-align: center;
@@ -39,11 +18,34 @@ body {
   height: 50px;
 }
 .nav-title {
-  color: black;
+  color: #005d77;
   font-family: Allura, cursive;
   font-size: 70px;
   margin-top: -40px;
 }
+.title {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 35px;
+  color:#005d77;
+}
+.state-title {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #005d77;
+}
+
+.nav-subtitle, a {
+ margin-bottom: 20px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitle {
+  font-size: 17px;
+  font-family: tahoma;
+  color: rgb(86, 86, 86);
+}
+
 
 .container {
   margin-top: 150px;
