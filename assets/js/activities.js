@@ -19,6 +19,39 @@ let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
 let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
 let stateCode = JSON.parse(sessionStorage.getItem('stateCode'));
 
+function fiveDayForecast(weatherData){
+  let fiveDayHtml = $('#five-day-html');
+  fiveDayHtml.empty();
+  
+  for(let i = 1; i < 6; i++){
+      let weatherDataFiveDay = weatherData.daily[i];
+      const addDivWeather = $('<div>')
+      addDivWeather.addClass('five-day-cards')
+  
+      let dateCode = new Date(weatherDataFiveDay.dt * 1000);
+      let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      let month = months[dateCode.getMonth()];
+      let date = dateCode.getDate();
+      let year = dateCode.getFullYear();
+      let addDate = $('<p>' + month + '/' + date + '/' + year + '</p>');
+  
+      var iconCode = weatherDataFiveDay.weather[0].icon;
+      var iconSource = "https://openweathermap.org/img/w/" + iconCode + ".png";
+      const addIcon = $('<img src="'+ iconSource +'"></img>');
+      const addTemp = $('<p>Temperature: ' + weatherDataFiveDay.temp.day + ' °F</p>');
+      const addWind = $('<p>Wind: ' + weatherDataFiveDay.wind_speed + ' MPH</p>');
+      const addHumidity = $('<p>Humidity: ' + weatherDataFiveDay.humidity + '%</p>');
+  
+          
+      addDate.appendTo(addDivWeather);
+      addIcon.appendTo(addDivWeather);
+      addTemp.appendTo(addDivWeather);
+      addWind.appendTo(addDivWeather);
+      addHumidity.appendTo(addDivWeather);
+      addDivWeather.appendTo(fiveDayHtml);
+  };
+};
+
 let renderSearchResults = function (stateCode) {
   let npsApiUrl =
     'https://developer.nps.gov/api/v1/parks?stateCode=' +
@@ -76,6 +109,7 @@ let renderSearchResults = function (stateCode) {
                   return;
                 } else {
                   response.json().then(function (weatherData) {
+                    fiveDayForecast(weatherData);
                     // displayWeatherData(weatherData); need to add function to display weather data to webpage
                     console.log(weatherData);
                   });
