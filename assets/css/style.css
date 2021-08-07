@@ -11,23 +11,52 @@ body {
   flex-direction: column;
   background-attachment: fixed;
 }
-
-h1{
-  font-size: 30px;
-  text-align: center;
+.title {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 35px;
+  color:grey;
 }
+.state-title {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: grey;
+}
+
+.nav-subtitle, a {
+ margin-bottom: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.subtitle {
+  font-size: 17px;
+  font-family: tahoma;
+  color: black;
+}
+
 .hero-body {
-  background-color: royalblue;
+  text-align: center;
+  background-color: transparent;
+  height: 50px;
+}
+.nav-title {
+  color: black;
+  font-family: Allura, cursive;
+  font-size: 70px;
+  margin-top: -40px;
 }
 
 .container {
-  margin-top: 200x;
-  position: center;
+  margin-top: 150px;
   text-align: center;
   height: 150px;
+  width: 600px;
   border-radius: 5px;
   padding: 30px;
   box-shadow: 0 0 10px 2px;
+}
+
+.columns{
+  margin-top: 30px;
 }
 
 .column {
@@ -35,23 +64,15 @@ h1{
   margin-left: 20px;
 }
 
-.foot{
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  justify-content: center;
-  width: 100%;
-  color: azure;
-}
-
 p, a {
   color: azure;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .five-day-cards {
   display: inline-block;
   margin: 30px;
+ align-items: center;
 }
 
 .five-day-cards p {
@@ -60,8 +81,10 @@ p, a {
   
 }
 
-.footer-title{
-  font-family: Allura, cursive;
-  font-size: 40px;
-
+.foot{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  width: 100%;
 }
