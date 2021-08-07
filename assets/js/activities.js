@@ -45,6 +45,18 @@ let renderSearchResults = function (stateCode) {
             activity2El.text(parkData.data[0].activities[1].name);
             activity3El.text(parkData.data[0].activities[2].name);
 
+            //function to pull random activities. still need to figure out how to get random activites on page. thinking we need to create the activity divs within this function and render those to the page.
+            function activityRandomizer() {
+              for (let i = 0; i < 3; i++) {
+                let randomActivity =
+                  activities[Math.floor(Math.random() * activities.length)];
+                activities.splice(randomActivity, 1);
+                console.log(randomActivity.name);
+              }
+            }
+
+            activityRandomizer();
+
             function getApiWeather() {
               let weatherUrlQuery =
                 'https://api.openweathermap.org/data/2.5/onecall?lat=' +
