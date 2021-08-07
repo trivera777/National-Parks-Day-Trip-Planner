@@ -4,48 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>National Parks Day Trip Planner</title>
 </head>
 
 <body>
-
-<section class="hero is-info">
-  <div class="hero-body">
-    <p class="title">  National Parks Day Trip Planner </p>
-    <p class="subtitle">
-        <a class="homeBtn" href="index.html">Home</a>
-    </p>
-  </div>
-</section>
+    <section class="hero-body">
+        <div class="nav-title">National Parks Day Trip Planner</div>
+        <a href="./index.html" style="color: black;">Home Page</a>
+        
+    
+      </section>
 <br>
 
 <div class="columns">
     <div class="column is-narrow">
-        <div class="box" style="width: 350px; height: 425px;">
-            <p class="title is-5" id='state-park-name'>State</p>
-            <p class="subtitle">
+        <div class="box" style="width: 350px; height: auto;">
+            <div class="state-title" id='state-park-name'></div>
                 <img id="pic" src="" alt="">
             </p>
         </div>
     </div>
 
     <div class="column">
-        <div class="box" style="width: 1450px; height: 100px;">
-           <p class="title is-5">Activities</p>
-
-    <div class="columns" id="activities">
-    </div>
+        <div class="box" style="width: 1350px; height: 150px;">
+           <div class="title">Activities</div>
+        <div class="columns" id="activities"></div>
     </div>
 
-
-    <div id="weather" style="width: 1450px;">
+    <div id="weather" style="width: 1350px;">
         <div class="box" style="height: 300px;">
-         <h1>Weather</h1> 
+         <div class="title">Weather</div> 
            <div id="five-day-html"></div>
         </div>
     </div>
