@@ -48,10 +48,13 @@ let renderSearchResults = function (stateCode) {
             //function to pull random activities. still need to figure out how to get random activites on page. thinking we need to create the activity divs within this function and render those to the page.
             function activityRandomizer() {
               for (let i = 0; i < 3; i++) {
-                let randomActivity =
-                  activities[Math.floor(Math.random() * activities.length)];
-                activities.splice(randomActivity, 1);
+                let randomNumber = Math.floor(
+                  Math.random() * activities.length
+                );
+                let randomActivity = activities[randomNumber];
+                activities.splice(randomNumber, 1);
                 console.log(randomActivity.name);
+                // create divs to display on page
               }
             }
 
