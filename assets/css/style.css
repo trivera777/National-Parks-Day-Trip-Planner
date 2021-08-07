@@ -32,7 +32,7 @@ h1{
 
 .column {
   text-align: center;
-margin-left: 20px;
+  margin-left: 20px;
 }
 
 .foot{
@@ -41,10 +41,27 @@ margin-left: 20px;
   bottom: 0;
   justify-content: center;
   width: 100%;
-  font-family: Allura;
+  color: azure;
 }
 
 p, a {
   color: azure;
   font-size: 25px;
+}
+
+.five-day-cards {
+  display: inline-block;
+  margin: 30px;
+}
+
+.five-day-cards p {
+  color: black;
+  font-size: 20px;
+  
+}
+
+.footer-title{
+  font-family: Allura, cursive;
+  font-size: 40px;
+
 }
