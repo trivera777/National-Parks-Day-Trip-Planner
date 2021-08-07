@@ -21,6 +21,8 @@ h1{
 }
 
 .container {
+  margin-top: 200x;
+  position: center;
   text-align: center;
   height: 150px;
   border-radius: 5px;
@@ -39,9 +41,10 @@ margin-left: 20px;
   bottom: 0;
   justify-content: center;
   width: 100%;
+  font-family: Allura;
 }
 
 p, a {
   color: azure;
-  font-size: 20px;
+  font-size: 25px;
 }
