@@ -3,7 +3,6 @@ body {
   padding: 0;
   margin: 0;
   width: 100vw;
-  height: 100vh;
   align-items: center;
   background: url('../mountains.jpg');
   background-repeat: no-repeat;
@@ -26,7 +25,7 @@ body {
 .title {
   font-family: 'Carrois Gothic SC', sans-serif;
   font-size: 35px;
-  color:#005d77;
+  color: #005d77;
 }
 .state-title {
   font-family: 'Carrois Gothic SC', sans-serif;
@@ -35,9 +34,10 @@ body {
   color: #005d77;
 }
 
-.nav-subtitle, a {
- margin-bottom: 20px;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+.nav-subtitle,
+a {
+  margin-bottom: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .subtitle {
@@ -45,7 +45,6 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-family: tahoma;
   color: rgb(86, 86, 86);
 }
-
 
 .container {
   margin-top: 150px;
@@ -57,7 +56,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-shadow: 0 0 10px 2px;
 }
 
-.columns{
+.columns {
   margin-top: 30px;
 }
 
@@ -66,7 +65,8 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-left: 20px;
 }
 
-p, a {
+p,
+a {
   color: azure;
   font-size: 20px;
 }
@@ -74,22 +74,20 @@ p, a {
 .five-day-cards {
   display: inline-block;
   margin: 30px;
- align-items: center;
+  align-items: center;
 }
 
 .five-day-cards p {
   color: black;
   font-size: 20px;
-  
 }
 
-.foot{
+.foot {
   display: flex;
-  position: fixed;
   bottom: 0;
   justify-content: center;
   width: 100%;
 }
-#map {
+.map {
   height: 200px;
 }
