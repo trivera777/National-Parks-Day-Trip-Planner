@@ -4,7 +4,7 @@ let searchResults = $('.search-results');
 let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
 let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
 // Micheal's API - Micheal exceeded the API fetch limit haha
-// let weatherApiKey = '55c422bf5964a5456389760079669854';
+let weatherApiKey2 = '55c422bf5964a5456389760079669854';
 let stateCode = JSON.parse(sessionStorage.getItem('stateCode'));
 
 let renderSearchResults = function (stateCode) {
@@ -219,7 +219,23 @@ let renderSearchResults = function (stateCode) {
                   if (response.status === 404) {
                     console.log('404 Error');
                     return;
-                  } else {
+                    // added if statement to call on second api key if we have too many requests that day/month
+                  } else if (response.status === 429){
+                      weatherUrlQuery =
+                        'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+                        latitude +
+                        '&lon=' +
+                        longitude +
+                        '&units=imperial' +
+                        '&APPID=' +
+                        weatherApiKey2;
+                        
+                        fetch(weatherUrlQuery).then(function (response){
+                          response.json().then(function (weatherData){
+                            fiveDayForecast(weatherData);
+                          });
+                        });
+                    } else {
                     response.json().then(function (weatherData) {
                       fiveDayForecast(weatherData);
                       // displayWeatherData(weatherData); need to add function to display weather data to webpage
