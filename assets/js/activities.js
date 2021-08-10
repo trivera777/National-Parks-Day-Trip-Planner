@@ -2,9 +2,9 @@ let searchResults = $('.search-results');
 
 //API Keys:
 let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
-// let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
+let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
 // Micheal's API - Micheal exceeded the API fetch limit haha
-let weatherApiKey = '55c422bf5964a5456389760079669854';
+// let weatherApiKey = '55c422bf5964a5456389760079669854';
 let stateCode = JSON.parse(sessionStorage.getItem('stateCode'));
 
 let renderSearchResults = function (stateCode) {
@@ -23,6 +23,8 @@ let renderSearchResults = function (stateCode) {
           response.json().then(function (parkData) {
             let parksArray = parkData.data;
             console.log(parksArray);
+
+            let mapCounter = 1;
 
             parksArray.forEach((element) => {
               let latitude = element.latitude;
@@ -43,7 +45,11 @@ let renderSearchResults = function (stateCode) {
 
               let addStateParkBox = $('<div>');
               addStateParkBox
-                .attr('class', 'box state-park-box');
+                .attr('class', 'box state-park-box')
+                .attr('data-lat', latitude)
+                .attr('data-long', longitude);
+
+
 
               let addStateParkName = $('<div>');
               addStateParkName
@@ -56,12 +62,13 @@ let renderSearchResults = function (stateCode) {
                 .attr('src', element.images[0].url)
                 .attr('alt', element.images[0].caption);
 
-              // let addMap = $('<div>');
-              // addMap.attr('id', 'map').attr('class', 'map');
+              let addMap = $('<div>');
+              addMap.attr('id', 'map-' + mapCounter).attr('class', 'map');
+              mapCounter++;
 
               addStateParkName.appendTo(addStateParkBox);
               addPic.appendTo(addStateParkBox);
-              // addMap.appendTo(addStateParkBox);
+              addMap.appendTo(addStateParkBox);
               addStateParkBox.appendTo(addStateParkInfo);
               addStateParkInfo.appendTo(addStateParkContainer);
               addStateParkContainer.appendTo(searchResults);
@@ -224,26 +231,14 @@ let renderSearchResults = function (stateCode) {
               getApiWeather();
 
               let map;
+            });
+            $('.state-park-box').each(function () {
+              let mapId = $(this).children('.map').attr('id');
 
-              let initMap = function () {
-                console.log(element.fullName);
-                console.log(latitude);
-                console.log(longitude);
+              let mapLat = $(this).attr('data-lat');
+              let mapLong = $(this).attr('data-long');
 
-                let addMap = $('<div>');
-                addMap.attr('id', 'map').attr('class', 'map');
-                addMap.appendTo(addStateParkBox);
-
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: {
-                    lat: parseFloat(latitude),
-                    lng: parseFloat(longitude),
-                  },
-                  zoom: 8,
-                });
-              };
-
-              initMap();
+              initMap(mapLat, mapLong, mapId);
             });
           });
         } else {
@@ -254,6 +249,16 @@ let renderSearchResults = function (stateCode) {
         alert('Unable to connect to NSP');
       });
   }
+
+  let initMap = function (lat, long, id) {
+    map = new google.maps.Map(document.getElementById(id), {
+      center: {
+        lat: parseFloat(lat),
+        lng: parseFloat(long),
+      },
+      zoom: 8,
+    });
+  };
 
   getApiNps(npsApiUrl);
 };
