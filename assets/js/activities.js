@@ -131,7 +131,7 @@ let renderSearchResults = function (stateCode) {
                 addWeatherContainer = $('<div>');
                 addWeatherContainer
                   .attr('id', 'weather')
-                  .attr('class', 'weather-container');
+                  .attr('class', 'weather-container is-flex');
 
                 addWeatherBox = $('<div>');
                 addWeatherBox
@@ -258,6 +258,7 @@ let renderSearchResults = function (stateCode) {
       },
       zoom: 8,
     });
+
   };
 
   getApiNps(npsApiUrl);
