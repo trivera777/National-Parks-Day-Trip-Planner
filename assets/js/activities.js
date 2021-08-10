@@ -46,9 +46,10 @@ let renderSearchResults = function (stateCode) {
               let addStateParkBox = $('<div>');
               addStateParkBox
                 .attr('class', 'box state-park-box')
-                .attr('style', 'width: 350px; height: auto;')
                 .attr('data-lat', latitude)
                 .attr('data-long', longitude);
+
+
 
               let addStateParkName = $('<div>');
               addStateParkName
@@ -80,8 +81,7 @@ let renderSearchResults = function (stateCode) {
 
               let addActivitiesBox = $('<div>');
               addActivitiesBox
-                .attr('class', 'box activities-box')
-                .attr('style', 'width: 1350px; height: 170px;');
+                .attr('class', 'box activities-box');
 
               let addActivitiesTitle = $('<div>');
               addActivitiesTitle
@@ -131,8 +131,7 @@ let renderSearchResults = function (stateCode) {
                 addWeatherContainer = $('<div>');
                 addWeatherContainer
                   .attr('id', 'weather')
-                  .attr('class', 'weather-container')
-                  .attr('style', 'width: 1350px;');
+                  .attr('class', 'weather-container');
 
                 addWeatherBox = $('<div>');
                 addWeatherBox
