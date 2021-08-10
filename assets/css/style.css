@@ -1,9 +1,9 @@
 @media only screen and (min-width: 600px) {
   .state-park-box {
     height: auto;
-    width: 600px;
+    width: 350px;
   }
-  .activities-box{
+  .activities-box {
     height: auto;
     width: auto;
   }
