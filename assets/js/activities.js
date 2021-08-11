@@ -1,5 +1,5 @@
 let searchResults = $('.search-results');
-// comment for checking
+// comment for checking, more testing
 //API Keys:
 let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
 let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
