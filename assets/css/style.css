@@ -1,15 +1,12 @@
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
     body{
     background-size: 100vh;
-    display: inline-block;
+    display: flex;
   }
   .hero-body {
     width: 100%;
   }
- 
-  .search-results {
-    width: 100%;
-  }
+
   .foot {
   width: 100%;
   }
@@ -20,10 +17,10 @@
     width:100%;
   }
   .state-park-box {
-    width: 100%;
+  width: 100%;
   }
   .five-day-cards {
-    width: 100%;
+  width: 100%;
   }
 }
 
@@ -70,12 +67,16 @@ body {
 }
 .activities-box {
   height: auto;
-  width: 1150px;
+  width: flex-wrap;
 }
 .weather-box {
   height: auto;
-  width: flex;
-  
+  width: flex-wrap;
+}
+
+.five-day-cards {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .columns {
@@ -113,7 +114,7 @@ a {
 }
 
 .five-day-cards {
-  display: inline-block;
+  display: flex;
   margin: 30px;
   align-items: center;
 }
