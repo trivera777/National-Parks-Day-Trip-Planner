@@ -1,19 +1,25 @@
 @media only screen and (min-width: 600px) {
   .state-park-box {
     height: auto;
-    width: 450px;
+    width: 350px;
+
   }
-  .activities-box{
+  .activities-box {
     height: auto;
     width: auto;
   }
   .weather-container {
+    flex-direction: row wrap;
     height: auto;
     width: auto;
+  }
+  body{
+    background-size: 100vh;
   }
 }
 
 body {
+  display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
@@ -21,7 +27,7 @@ body {
   align-items: center;
   background: url('../mountains.jpg');
   background-repeat: no-repeat;
-  background-size: 2000px 1000px;
+  background-size: cover;
   flex-direction: column;
   background-attachment: fixed;
 }

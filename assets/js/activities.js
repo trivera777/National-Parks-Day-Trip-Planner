@@ -2,9 +2,9 @@ let searchResults = $('.search-results');
 
 //API Keys:
 let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
-// let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
+let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
 // Micheal's API - Micheal exceeded the API fetch limit haha
-let weatherApiKey = '55c422bf5964a5456389760079669854';
+let weatherApiKey2 = '55c422bf5964a5456389760079669854';
 let stateCode = JSON.parse(sessionStorage.getItem('stateCode'));
 
 let renderSearchResults = function (stateCode) {
@@ -23,6 +23,8 @@ let renderSearchResults = function (stateCode) {
           response.json().then(function (parkData) {
             let parksArray = parkData.data;
             console.log(parksArray);
+
+            let mapCounter = 1;
 
             parksArray.forEach((element) => {
               let latitude = element.latitude;
@@ -43,7 +45,9 @@ let renderSearchResults = function (stateCode) {
 
               let addStateParkBox = $('<div>');
               addStateParkBox
-                .attr('class', 'box state-park-box');
+                .attr('class', 'box state-park-box')
+                .attr('data-lat', latitude)
+                .attr('data-long', longitude);
 
               let addStateParkName = $('<div>');
               addStateParkName
@@ -56,12 +60,13 @@ let renderSearchResults = function (stateCode) {
                 .attr('src', element.images[0].url)
                 .attr('alt', element.images[0].caption);
 
-              // let addMap = $('<div>');
-              // addMap.attr('id', 'map').attr('class', 'map');
+              let addMap = $('<div>');
+              addMap.attr('id', 'map-' + mapCounter).attr('class', 'map');
+              mapCounter++;
 
               addStateParkName.appendTo(addStateParkBox);
               addPic.appendTo(addStateParkBox);
-              // addMap.appendTo(addStateParkBox);
+              addMap.appendTo(addStateParkBox);
               addStateParkBox.appendTo(addStateParkInfo);
               addStateParkInfo.appendTo(addStateParkContainer);
               addStateParkContainer.appendTo(searchResults);
@@ -73,8 +78,7 @@ let renderSearchResults = function (stateCode) {
               );
 
               let addActivitiesBox = $('<div>');
-              addActivitiesBox
-                .attr('class', 'box activities-box');
+              addActivitiesBox.attr('class', 'box activities-box');
 
               let addActivitiesTitle = $('<div>');
               addActivitiesTitle
@@ -124,12 +128,12 @@ let renderSearchResults = function (stateCode) {
                 addWeatherContainer = $('<div>');
                 addWeatherContainer
                   .attr('id', 'weather')
-                  .attr('class', 'weather-container');
+                  .attr('class', 'weather-container is-flex');
 
                 addWeatherBox = $('<div>');
                 addWeatherBox
                   .attr('class', 'box weather-box')
-                  .attr('style', 'height: 320px;');
+                  .attr('style', 'height: 350px;');
 
                 addWeatherTitle = $('<div>');
                 addWeatherTitle
@@ -139,7 +143,7 @@ let renderSearchResults = function (stateCode) {
                 addFiveDayForcast = $('<div>');
                 addFiveDayForcast
                   .attr('id', 'five-day-html')
-                  .attr('class', 'five-day-forcast');
+                  .attr('class', 'five-day-forcast is-flex');
 
                 addWeatherTitle.appendTo(addWeatherBox);
                 addFiveDayForcast.appendTo(addWeatherBox);
@@ -180,7 +184,7 @@ let renderSearchResults = function (stateCode) {
                     'https://openweathermap.org/img/w/' + iconCode + '.png';
                   const addIcon = $('<img src="' + iconSource + '"></img>');
                   const addTemp = $(
-                    '<p>Temperature: ' + weatherDataFiveDay.temp.day + ' °F</p>'
+                    '<p>Temp: ' + weatherDataFiveDay.temp.day + ' °F</p>'
                   );
                   const addWind = $(
                     '<p>Wind: ' + weatherDataFiveDay.wind_speed + ' MPH</p>'
@@ -212,6 +216,22 @@ let renderSearchResults = function (stateCode) {
                   if (response.status === 404) {
                     console.log('404 Error');
                     return;
+                    // added if statement to call on second api key if we have too many requests that day/month
+                  } else if (response.status === 429) {
+                    weatherUrlQuery =
+                      'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+                      latitude +
+                      '&lon=' +
+                      longitude +
+                      '&units=imperial' +
+                      '&APPID=' +
+                      weatherApiKey2;
+
+                    fetch(weatherUrlQuery).then(function (response) {
+                      response.json().then(function (weatherData) {
+                        fiveDayForecast(weatherData);
+                      });
+                    });
                   } else {
                     response.json().then(function (weatherData) {
                       fiveDayForecast(weatherData);
@@ -224,26 +244,14 @@ let renderSearchResults = function (stateCode) {
               getApiWeather();
 
               let map;
+            });
+            $('.state-park-box').each(function () {
+              let mapId = $(this).children('.map').attr('id');
 
-              let initMap = function () {
-                console.log(element.fullName);
-                console.log(latitude);
-                console.log(longitude);
+              let mapLat = $(this).attr('data-lat');
+              let mapLong = $(this).attr('data-long');
 
-                let addMap = $('<div>');
-                addMap.attr('id', 'map').attr('class', 'map');
-                addMap.appendTo(addStateParkBox);
-
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: {
-                    lat: parseFloat(latitude),
-                    lng: parseFloat(longitude),
-                  },
-                  zoom: 8,
-                });
-              };
-
-              initMap();
+              initMap(mapLat, mapLong, mapId);
             });
           });
         } else {
@@ -254,6 +262,16 @@ let renderSearchResults = function (stateCode) {
         alert('Unable to connect to NSP');
       });
   }
+
+  let initMap = function (lat, long, id) {
+    map = new google.maps.Map(document.getElementById(id), {
+      center: {
+        lat: parseFloat(lat),
+        lng: parseFloat(long),
+      },
+      zoom: 8,
+    });
+  };
 
   getApiNps(npsApiUrl);
 };
