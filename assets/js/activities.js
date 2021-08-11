@@ -49,8 +49,6 @@ let renderSearchResults = function (stateCode) {
                 .attr('data-lat', latitude)
                 .attr('data-long', longitude);
 
-
-
               let addStateParkName = $('<div>');
               addStateParkName
                 .attr('class', 'state-title state-park-name')
@@ -80,8 +78,7 @@ let renderSearchResults = function (stateCode) {
               );
 
               let addActivitiesBox = $('<div>');
-              addActivitiesBox
-                .attr('class', 'box activities-box');
+              addActivitiesBox.attr('class', 'box activities-box');
 
               let addActivitiesTitle = $('<div>');
               addActivitiesTitle
@@ -136,7 +133,7 @@ let renderSearchResults = function (stateCode) {
                 addWeatherBox = $('<div>');
                 addWeatherBox
                   .attr('class', 'box weather-box')
-                  .attr('style', 'height: 320px;');
+                  .attr('style', 'height: 350px;');
 
                 addWeatherTitle = $('<div>');
                 addWeatherTitle
@@ -146,7 +143,7 @@ let renderSearchResults = function (stateCode) {
                 addFiveDayForcast = $('<div>');
                 addFiveDayForcast
                   .attr('id', 'five-day-html')
-                  .attr('class', 'five-day-forcast');
+                  .attr('class', 'five-day-forcast is-flex');
 
                 addWeatherTitle.appendTo(addWeatherBox);
                 addFiveDayForcast.appendTo(addWeatherBox);
@@ -187,7 +184,7 @@ let renderSearchResults = function (stateCode) {
                     'https://openweathermap.org/img/w/' + iconCode + '.png';
                   const addIcon = $('<img src="' + iconSource + '"></img>');
                   const addTemp = $(
-                    '<p>Temperature: ' + weatherDataFiveDay.temp.day + ' °F</p>'
+                    '<p>Temp: ' + weatherDataFiveDay.temp.day + ' °F</p>'
                   );
                   const addWind = $(
                     '<p>Wind: ' + weatherDataFiveDay.wind_speed + ' MPH</p>'
@@ -220,22 +217,22 @@ let renderSearchResults = function (stateCode) {
                     console.log('404 Error');
                     return;
                     // added if statement to call on second api key if we have too many requests that day/month
-                  } else if (response.status === 429){
-                      weatherUrlQuery =
-                        'https://api.openweathermap.org/data/2.5/onecall?lat=' +
-                        latitude +
-                        '&lon=' +
-                        longitude +
-                        '&units=imperial' +
-                        '&APPID=' +
-                        weatherApiKey2;
-                        
-                        fetch(weatherUrlQuery).then(function (response){
-                          response.json().then(function (weatherData){
-                            fiveDayForecast(weatherData);
-                          });
-                        });
-                    } else {
+                  } else if (response.status === 429) {
+                    weatherUrlQuery =
+                      'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+                      latitude +
+                      '&lon=' +
+                      longitude +
+                      '&units=imperial' +
+                      '&APPID=' +
+                      weatherApiKey2;
+
+                    fetch(weatherUrlQuery).then(function (response) {
+                      response.json().then(function (weatherData) {
+                        fiveDayForecast(weatherData);
+                      });
+                    });
+                  } else {
                     response.json().then(function (weatherData) {
                       fiveDayForecast(weatherData);
                       // displayWeatherData(weatherData); need to add function to display weather data to webpage
@@ -274,7 +271,6 @@ let renderSearchResults = function (stateCode) {
       },
       zoom: 8,
     });
-
   };
 
   getApiNps(npsApiUrl);
