@@ -1,22 +1,30 @@
 @media only screen and (min-width: 600px) {
-  .state-park-box {
-    height: auto;
-    width: 350px;
-
+    body{
+    background-size: 100vh;
+    display: inline-block;
+  }
+  .hero-body {
+    width: 100%;
+  }
+ 
+  .search-results {
+    width: 100%;
+  }
+  .foot {
+  width: 100%;
   }
   .activities-box {
-    height: auto;
-    width: auto;
+    width:100%;
   }
-  .weather-container {
-    flex-direction: row wrap;
-    height: auto;
-    width: auto;
+  .weather-box {
+    width:100%;
   }
-  body{
-    background-size: 100vh;
+  .state-park-box {
+    width: 100%;
   }
-
+  .five-day-cards {
+    width: 100%;
+  }
 }
 
 body {
@@ -56,6 +64,36 @@ body {
   color: #005d77;
 }
 
+.state-park-box {
+  height: auto;
+  width: 350px;
+}
+.activities-box {
+  height: auto;
+  width: 1150px;
+}
+.weather-box {
+  height: auto;
+  width: flex;
+  
+}
+
+.columns {
+  margin-top: 30px;
+}
+
+.column {
+  text-align: center;
+  margin-left: 20px;
+}
+.container {
+  margin-top: 100px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 0 10px 2px;
+}
+
 .nav-subtitle,
 a {
   margin-bottom: 20px;
@@ -66,25 +104,6 @@ a {
   font-size: 17px;
   font-family: tahoma;
   color: rgb(86, 86, 86);
-}
-
-.container {
-  margin-top: 150px;
-  text-align: center;
-  height: 150px;
-  width: 600px;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 0 0 10px 2px;
-}
-
-.columns {
-  margin-top: 30px;
-}
-
-.column {
-  text-align: center;
-  margin-left: 20px;
 }
 
 p,
@@ -112,4 +131,5 @@ a {
 }
 .map {
   height: 200px;
+  width: auto;
 }

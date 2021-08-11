@@ -1,9 +1,18 @@
+@media only screen and (min-width: 600px) {
 body {
   display: inline-block;
    height: 100vh;
-  /* background-size: 100vh 100vw; */
+}
+
+.hero-body {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
 }
 
 .foot {
   position: fixed;
+}
 }
