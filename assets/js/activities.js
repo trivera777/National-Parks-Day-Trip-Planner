@@ -22,7 +22,6 @@ let renderSearchResults = function (stateCode) {
         if (response.status === 200) {
           response.json().then(function (parkData) {
             let parksArray = parkData.data;
-            console.log(parksArray);
 
             let mapCounter = 1;
 
@@ -255,11 +254,11 @@ let renderSearchResults = function (stateCode) {
             });
           });
         } else {
-          alert('Error: ' + response.statusText);
+          console.log('Error: ' + response.statusText);
         }
       })
       .catch(function (error) {
-        alert('Unable to connect to NSP');
+        console.log('Unable to connect to NSP');
       });
   }
 
