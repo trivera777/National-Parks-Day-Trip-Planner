@@ -11,3 +11,5 @@ searchBtn.click(function (event) {
   window.location.href = redirectUrl;
   //call to the render search function
 });
+
+//add comment for testing
