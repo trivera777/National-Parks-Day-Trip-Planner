@@ -1,9 +1,7 @@
 let searchResults = $('.search-results');
-// comment for checking, more testing
-//API Keys:
+
 let npsApiKey = 'keUgXA4zA0DCR17ihQfTmtASQqGBGyMJ8Q85tkNc';
 let weatherApiKey = 'f6dbccad1096ef580392335246d5632e';
-// Micheal's API - Micheal exceeded the API fetch limit haha
 let weatherApiKey2 = '55c422bf5964a5456389760079669854';
 let stateCode = JSON.parse(sessionStorage.getItem('stateCode'));
 
@@ -11,7 +9,6 @@ let renderSearchResults = function (stateCode) {
   let npsApiUrl =
     'https://developer.nps.gov/api/v1/parks?stateCode=' +
     stateCode +
-    //changed to display 5 results to the ID.
     '&limit=5&api_key=' +
     npsApiKey;
 
@@ -90,7 +87,6 @@ let renderSearchResults = function (stateCode) {
                 .attr('id', 'activities')
                 .attr('style', 'font-size: 25px;');
 
-              //added if statement. some Nantional Parks do not have activities listed
               function activityRandomizer() {
                 if (activities.length != 0) {
                   for (let i = 0; i < 3; i++) {
@@ -150,7 +146,6 @@ let renderSearchResults = function (stateCode) {
                 addWeatherContainer.appendTo(addActivitiesWeatherContainer);
 
                 addFiveDayForcast.empty();
-                //changed - index previously starting at 1. that started forcast with tomorrow's info.
                 for (let i = 0; i < 5; i++) {
                   let weatherDataFiveDay = weatherData.daily[i];
                   const addDivWeather = $('<div>');
@@ -215,7 +210,6 @@ let renderSearchResults = function (stateCode) {
                   if (response.status === 404) {
                     console.log('404 Error');
                     return;
-                    // added if statement to call on second api key if we have too many requests that day/month
                   } else if (response.status === 429) {
                     weatherUrlQuery =
                       'https://api.openweathermap.org/data/2.5/onecall?lat=' +
@@ -234,15 +228,12 @@ let renderSearchResults = function (stateCode) {
                   } else {
                     response.json().then(function (weatherData) {
                       fiveDayForecast(weatherData);
-                      // displayWeatherData(weatherData); need to add function to display weather data to webpage
                     });
                     0;
                   }
                 });
               }
               getApiWeather();
-
-              let map;
             });
             $('.state-park-box').each(function () {
               let mapId = $(this).children('.map').attr('id');
@@ -261,6 +252,7 @@ let renderSearchResults = function (stateCode) {
         console.log('Unable to connect to NSP');
       });
   }
+  let map;
 
   let initMap = function (lat, long, id) {
     map = new google.maps.Map(document.getElementById(id), {
