@@ -1,5 +1,5 @@
 @media only screen and (min-width: 700px) {
-    body{
+  body {
     background-size: 100vh;
     display: flex;
   }
@@ -8,19 +8,19 @@
   }
 
   .foot {
-  width: 100%;
+    width: 100%;
   }
   .activities-box {
-    width:100%;
+    width: 100%;
   }
   .weather-box {
-    width:100%;
+    width: 100%;
   }
   .state-park-box {
-  width: 100%;
+    width: 100%;
   }
   .five-day-cards {
-  width: 100%;
+    width: 100%;
   }
 }
 
@@ -65,6 +65,11 @@ body {
   height: auto;
   width: 350px;
 }
+
+.activites-weather-container {
+  margin-right: 2vw;
+}
+
 .activities-box {
   height: auto;
   width: flex-wrap;
