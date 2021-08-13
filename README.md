@@ -9,10 +9,11 @@ Live URL: https://trivera777.github.io/National-Parks-Day-Trip-Planner/
 2. Visual Example
 3. User Story
 4. Criteria
-5. Our Experience 
-6. Breakdown of Tasks
-7. Planned future development
-8. Resources
+5. Our Experience
+6. Contributors
+7. Breakdown of Tasks
+8. Planned future development
+9. Resources
 ```
 
 ## Visual Example
@@ -65,6 +66,14 @@ but as a team we were able to overcome these. Github presented some isses, and
 using the Google Maps API wasn't very logical. We had fun!
 ```
 
+## Contributors
+
+
+- [Nathan Flessner](https://github.com/SirNathanJF)
+- [Tifanny Rivera](https://github.com/trivera777/)
+- [Micheal Limones](https://github.com/michlimones)
+
+
 ## Breakdown of Tasks
 
 ```
@@ -87,13 +96,16 @@ We all did a little of each though, helping each other where needed.
 
 
 ## Resources
+![HTML5](https://img.shields.io/static/v1?style=for-the-badge&message=HTML5&color=E34F26&logo=HTML5&logoColor=FFFFFF&label=)
+![CSS3](https://img.shields.io/static/v1?style=for-the-badge&message=CSS3&color=1572B6&logo=CSS3&logoColor=FFFFFF&label=)
+![JavaScript](https://img.shields.io/static/v1?style=for-the-badge&message=JavaScript&color=222222&logo=JavaScript&logoColor=F7DF1E&label=)
+![jQuery](https://img.shields.io/static/v1?style=for-the-badge&message=jQuery&color=0769AD&logo=jQuery&logoColor=FFFFFF&label=)
+![Bulma](https://img.shields.io/static/v1?style=for-the-badge&message=Bulma&color=222222&logo=Bulma&logoColor=00D1B2&label=)
 
 ```
 * NPS API - https://www.nps.gov/subjects/developer/index.htm
 * OpenWeather API - https://openweathermap.org/api
 * Google Maps API - https://developers.google.com/maps
-* jQuery - https://jquery.com/
-* Bulma CSS Framework - https://bulma.io/
 * Plenty of help from friends, tutors, Tanni, and Dan. (The latter two is a Teacher Assistant and an Instructor of our course, respectively)
 ```
 
