@@ -11,7 +11,8 @@ Live URL: https://trivera777.github.io/National-Parks-Day-Trip-Planner/
 4. Criteria
 5. Our Experience 
 6. Breakdown of Tasks
-7. Resources
+7. Planned future development
+8. Resources
 ```
 
 ## Visual Example
@@ -72,6 +73,18 @@ Tifanny - Github Guru, HTML EXPERT, CSS design
 Micheal - Presentation Proctor, Primary JavaScript
 We all did a little of each though, helping each other where needed. 
 ```
+
+## Future Development
+
+```
+* Make the activities section more descriptive. Add actual activities to do not just descriptions
+ of those activites (fishing spots, hiking trails, etc.)
+* A more responsive site for different screen sizes (especially extremely mobile friendly)
+* Add a feature to search by location rather than state (find closest park to user)
+* Adding user profiles/favorites so that user can come back and see previously planned trips
+* FAR - Add a system to keep track of state parks that you've visited. Maybe add badges and awards. 
+```
+
 
 ## Resources
 
