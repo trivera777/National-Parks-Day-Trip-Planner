@@ -68,11 +68,11 @@ using the Google Maps API wasn't very logical. We had fun!
 
 ## Contributors
 
-```
+
 - [Nathan Flessner](https://github.com/SirNathanJF)
 - [Tifanny Rivera](https://github.com/trivera777/)
 - [Micheal Limones](https://github.com/michlimones)
-```
+
 
 ## Breakdown of Tasks
 
