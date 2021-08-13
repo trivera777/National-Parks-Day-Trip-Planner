@@ -82,7 +82,7 @@ We all did a little of each though, helping each other where needed.
 * A more responsive site for different screen sizes (especially extremely mobile friendly)
 * Add a feature to search by location rather than state (find closest park to user)
 * Adding user profiles/favorites so that user can come back and see previously planned trips
-* FAR - Add a system to keep track of state parks that you've visited. Maybe add badges and awards. 
+* FAR - Add a system to keep track of national parks that you've visited. Maybe add badges and awards. 
 ```
 
 
