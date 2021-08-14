@@ -30,7 +30,9 @@ let renderSearchResults = function (stateCode) {
               let addStateParkContainer = $('<div>');
               addStateParkContainer.attr(
                 'class',
-                'columns state-park-container'
+                'columns state-park-container',
+                'style',
+                'width; 100vw;'
               );
 
               let addStateParkInfo = $('<div>');
@@ -41,7 +43,7 @@ let renderSearchResults = function (stateCode) {
 
               let addStateParkBox = $('<div>');
               addStateParkBox
-                .attr('class', 'box state-park-box')
+                .attr('class', 'box state-park-box', 'style', 'display:block;')
                 .attr('data-lat', latitude)
                 .attr('data-long', longitude);
 
@@ -70,7 +72,9 @@ let renderSearchResults = function (stateCode) {
               let addActivitiesWeatherContainer = $('<div>');
               addActivitiesWeatherContainer.attr(
                 'class',
-                'column activites-weather-container'
+                'container activites-weather-container',
+                'class',
+                'row'
               );
 
               let addActivitiesBox = $('<div>');
@@ -123,12 +127,19 @@ let renderSearchResults = function (stateCode) {
                 addWeatherContainer = $('<div>');
                 addWeatherContainer
                   .attr('id', 'weather')
-                  .attr('class', 'weather-container is-flex');
+                  .attr(
+                    'class', 
+                    'weather-container is-flex'
+                  );
 
                 addWeatherBox = $('<div>');
                 addWeatherBox
                   .attr('class', 'box weather-box')
-                  .attr('style', 'height: 350px;');
+                  .attr(
+                    'style', 
+                    'height: 350px;',
+                    'style',
+                    'width: 100%;');
 
                 addWeatherTitle = $('<div>');
                 addWeatherTitle
@@ -138,7 +149,7 @@ let renderSearchResults = function (stateCode) {
                 addFiveDayForcast = $('<div>');
                 addFiveDayForcast
                   .attr('id', 'five-day-html')
-                  .attr('class', 'five-day-forcast is-flex');
+                  .attr('class', 'five-day-forcast is-flex',);
 
                 addWeatherTitle.appendTo(addWeatherBox);
                 addFiveDayForcast.appendTo(addWeatherBox);
@@ -149,7 +160,9 @@ let renderSearchResults = function (stateCode) {
                 for (let i = 0; i < 5; i++) {
                   let weatherDataFiveDay = weatherData.daily[i];
                   const addDivWeather = $('<div>');
-                  addDivWeather.addClass('five-day-cards');
+                  addDivWeather.addClass('five-day-cards',
+                  'class',
+                    'inline-block');
 
                   let dateCode = new Date(weatherDataFiveDay.dt * 1000);
                   let months = [
