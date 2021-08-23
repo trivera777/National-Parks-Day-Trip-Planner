@@ -1,18 +1,19 @@
 @media only screen and (min-width: 600px) {
-body {
-  display: inline-block;
-   height: 100vh;
-}
+  body {
+    display: inline-block;
+    height: 100vh;
+  }
 
-.hero-body {
-  width: 100%;
-}
+  .hero-body {
+    width: 100%;
+  }
 
-.container {
-  width: 100%;
-}
+  .container1 {
+    width: 50%;
+    margin: 100px auto;
+  }
 
-.foot {
-  position: fixed;
-}
+  .foot {
+    position: fixed;
+  }
 }
