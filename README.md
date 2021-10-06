@@ -25,7 +25,7 @@ Live URL: https://trivera777.github.io/National-Parks-Day-Trip-Planner/
 ```
 As AN American traveler
 I WANT to see a few National Parks in a certain state, with weather and activities
-SO THAT I can plan a trip accordingly. 
+SO THAT I can plan a trip accordingly.
 ```
 
 ## Criteria
@@ -57,9 +57,9 @@ SO THAT I can plan a trip accordingly.
 ```
 Initially, we had very different ideas for this application. Finding
 API's that worked for what we needed proved to be a little difficult.
-We were able to adapt our idea into this and we were very proud of that. 
+We were able to adapt our idea into this and we were very proud of that.
 We love the idea of being outdoors, and with that in mind we decided
-that being able to plan a trip to a state park and seeing what activities 
+that being able to plan a trip to a state park and seeing what activities
 were there, and the weather for the next 5 days would be very nice. We definitely
 met with difficulties with the different API's and learning a new CSS framework,
 but as a team we were able to overcome these. Github presented some isses, and
@@ -68,11 +68,9 @@ using the Google Maps API wasn't very logical. We had fun!
 
 ## Contributors
 
-
 - [Nathan Flessner](https://github.com/SirNathanJF)
 - [Tifanny Rivera](https://github.com/trivera777/)
-- [Micheal Limones](https://github.com/michlimones)
-
+- [Micheal Limones](https://github.com/ZestyLimones)
 
 ## Breakdown of Tasks
 
@@ -80,7 +78,7 @@ using the Google Maps API wasn't very logical. We had fun!
 Nathan - Project Manager, API researcher, JavaScript Assist
 Tifanny - Github Guru, HTML EXPERT, CSS design
 Micheal - Presentation Proctor, Primary JavaScript
-We all did a little of each though, helping each other where needed. 
+We all did a little of each though, helping each other where needed.
 ```
 
 ## Future Development
@@ -91,11 +89,11 @@ We all did a little of each though, helping each other where needed.
 * A more responsive site for different screen sizes (especially extremely mobile friendly)
 * Add a feature to search by location rather than state (find closest park to user)
 * Adding user profiles/favorites so that user can come back and see previously planned trips
-* FAR - Add a system to keep track of national parks that you've visited. Maybe add badges and awards. 
+* FAR - Add a system to keep track of national parks that you've visited. Maybe add badges and awards.
 ```
 
-
 ## Resources
+
 ![HTML5](https://img.shields.io/static/v1?style=for-the-badge&message=HTML5&color=E34F26&logo=HTML5&logoColor=FFFFFF&label=)
 ![CSS3](https://img.shields.io/static/v1?style=for-the-badge&message=CSS3&color=1572B6&logo=CSS3&logoColor=FFFFFF&label=)
 ![JavaScript](https://img.shields.io/static/v1?style=for-the-badge&message=JavaScript&color=222222&logo=JavaScript&logoColor=F7DF1E&label=)
@@ -108,5 +106,3 @@ We all did a little of each though, helping each other where needed.
 * Google Maps API - https://developers.google.com/maps
 * Plenty of help from friends, tutors, Tanni, and Dan. (The latter two is a Teacher Assistant and an Instructor of our course, respectively)
 ```
-
-
